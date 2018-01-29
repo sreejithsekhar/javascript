@@ -64,8 +64,4 @@ angular.module("mainApp", ["ui.router"])
 				}
 			}
 		})
-	})
-	.controller("MainCtl", ["$scope", function($scope) {
-		console.log("hello world");
-		$scope.message = "hello";
-	}]);
+	});
