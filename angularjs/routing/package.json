@@ -1,0 +1,18 @@
+{
+  "name": "routing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "watchify app.js -o bundle.js -v"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "angular": "^1.6.8",
+    "angular-ui-router": "^1.0.3",
+    "watchify": "^3.10.0"
+  }
+}
