@@ -2,8 +2,8 @@ Sample workflow with below frameworks
 webpack - babel -- done
 react -- done
 redux -- done
-sass --
-build an app drawer
+sass -- done
+build an app drawer --
 react grid layout
 test
 grunt

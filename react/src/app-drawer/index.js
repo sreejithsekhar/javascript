@@ -2,8 +2,14 @@ import React from "react";
 
 import "./app-drawer.scss";
 
+import ContextMenu from "./context-menu";
+import AppMenuDrawer from "./app-menu-drawer";
+
 const AppDrawer = () => (
-    <div>App drawer</div>
+    [
+        <ContextMenu key="contextmenu" />,
+        <AppMenuDrawer key="appdrawer" />
+    ]
 );
 
 export default AppDrawer;
