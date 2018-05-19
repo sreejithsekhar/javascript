@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-const samples = (state = {showMenu : false}, action) => {
+const workspace = (state = {showMenu : false}, action) => {
     switch (action.type) {
         case "OPEN_SOMETHING":
             return {
@@ -17,5 +17,5 @@ const samples = (state = {showMenu : false}, action) => {
 }
 
 export default combineReducers({
-    samples
+    workspace
 });
