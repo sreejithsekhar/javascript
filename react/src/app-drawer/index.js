@@ -9,10 +9,6 @@ import AppMenuDrawer from "./app-menu-drawer";
 import { openDrawer, closeDrawer, appDrawerLoaded, appMenuClicked } from "../actions";
 
 class AppDrawer extends React.PureComponent {
-    componentDidMount() {
-        this.props.onLoad();
-    }
-
     render () {
         return (
             [
@@ -29,7 +25,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    onLoad: () => dispatch(appDrawerLoaded()),
     onShow: () => dispatch(openDrawer()),
     onHide: () => dispatch(closeDrawer()),
     onAppClick: (app) => dispatch(appMenuClicked(app))

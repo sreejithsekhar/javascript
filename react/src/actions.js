@@ -10,18 +10,38 @@ export const closeDrawer = () => ({
     type: "CLOSE_DRAWER"
 });
 
-export const appDrawerLoaded = () => ({
-    type: "APP_DRAWER_LOADED",
-    apps: apps
-});
-
 export const appMenuClicked = (app) => ({
     type: "APP_MENU_CLICKED",
     selectedApp: app
 });
 
-export const getLayout = () => ({
-    type: "READ_APP_LAYOUT",
-    layout: layouts,
-    openedApps: openedApps
-});
+function settingsRequested() {
+    return {
+        type: "WORKSPACE_SETTINGS_REQUESTED"
+    }
+}
+
+function settingsReceived(response) {
+    return {
+        type: "WORKSPACE_SETTINGS_RECEIVED",
+        apps: response.apps,
+        layout: response.layouts,
+        openedApps: response.openedApps
+    }
+}
+
+function settingsFailed(error) {
+    return {
+        type: "WORKSPACE_SETTINGS_FAILED"
+    }
+}
+
+export function loadWorkspaceSettings() {
+    return dispatch => {
+        dispatch(settingsRequested());
+        return fetch("/data/workspace.json")
+            .then(response => response.json())
+            .then(json => dispatch(settingsReceived(json)))
+            .catch(err => dispatch(settingsFailed(err)));
+    }
+}
