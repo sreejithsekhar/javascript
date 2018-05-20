@@ -8,8 +8,9 @@ react grid layout -- done
 app open -- done
 app close -- done
 redux thunk --done
-app pos save --
-test
+app pos save -- done
+test redux -- done
+test react
 grunt
 lint
 express
