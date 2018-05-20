@@ -48,6 +48,11 @@ const workspace = (state = {}, action) => {
             layout: action.layout,
             openedApps: action.openedApps
         }
+        case "WORKSPACE_LAYOUT_CHANGED":
+        return {
+            ...state,
+            layout: action.layout
+        }
         default:
             return state
     }

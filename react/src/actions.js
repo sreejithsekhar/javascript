@@ -30,13 +30,10 @@ function customizationFailed(error) {
 
 export const applyCustomization = () =>
     (dispatch, getState) => {
-        console.log("state", getState());        
         dispatch(customizationRequested());
         return fetch("/settings", {
             method: "POST",
-            body: JSON.stringify({
-                "layout": ["x"]
-            }),
+            body: JSON.stringify(getState().workspace.layout),
             headers: {
                 'content-type': 'application/json'
             }
@@ -77,5 +74,12 @@ export function loadWorkspaceSettings() {
             .then(response => response.json())
             .then(json => dispatch(settingsReceived(json)))
             .catch(err => dispatch(settingsFailed(err)));
+    }
+}
+
+export function onWorkspaceLayoutChanged(layout) {
+    return {
+        type: "WORKSPACE_LAYOUT_CHANGED",
+        layout: layout
     }
 }
