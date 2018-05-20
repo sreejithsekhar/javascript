@@ -3,8 +3,8 @@ webpack - babel -- done
 react -- done
 redux -- done
 sass -- done
-build an app drawer --
-react grid layout
+build an app drawer -- done
+react grid layout --
 test
 grunt
 lint
