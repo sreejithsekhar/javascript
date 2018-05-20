@@ -1,7 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
 
-const AppContainer = () => (
-    <div>App container</div>
-)
+class AppContainer extends React.PureComponent{
+    render () {
+        return (
+            <div>{this.props.selectedApp}</div>
+        )
+    }
+}
 
-export default AppContainer;
+const mapStateToProps = (state) => ({
+    selectedApp: state.workspace.selectedApp || "App container"
+});
+
+export default connect(mapStateToProps) (AppContainer);
