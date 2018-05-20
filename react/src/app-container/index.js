@@ -2,29 +2,40 @@ import React from "react";
 import { connect } from "react-redux";
 import ReactGridLayout from "react-grid-layout";
 
+import { getLayout } from "../actions";
+
 import "./grid-layout.scss";
+import "./app-container.scss";
 
 class AppContainer extends React.PureComponent{
+    componentDidMount () {
+        this.props.getInitLayout();
+    }
+    renderApps (apps) {
+        return apps.map((app) => <div key={app}>{app}</div>);
+    }
     render () {
-        let layout = [
-            {i: 'a', x: 0, y: 0, w: 1, h: 2, static: false},
-            {i: 'b', x: 1, y: 0, w: 3, h: 2, minW: 2, maxW: 4},
-            {i: 'c', x: 4, y: 0, w: 1, h: 2}
-          ];
         return (
             <div>{this.props.selectedApp}
-               <ReactGridLayout className="layout" isResizable={true} verticalCompact={false} isDraggable={true} layout={layout} cols={12} rowHeight={30} width={1200}>
-                    <div key="a">a</div>
-                    <div key="b">b</div>
-                    <div key="c">c</div>
+               <ReactGridLayout className="layout"
+                    isResizable={true} compactType={"horizontal"} 
+                    isDraggable={true} layout={this.props.appLayout} 
+                    cols={5} rowHeight={30} width={1200}>
+                    {this.renderApps(this.props.openedApps)}
                 </ReactGridLayout>
             </div>
-        )
+        );
     }
 }
 
 const mapStateToProps = (state) => ({
-    selectedApp: state.workspace.selectedApp || "App container"
+    selectedApp: state.workspace.selectedApp || "App container",
+    appLayout: state.workspace.layout || [],
+    openedApps: state.workspace.openedApps || []
 });
 
-export default connect(mapStateToProps) (AppContainer);
+const mapDispatchToProps = (dispatch) => ({
+    getInitLayout: () => (dispatch(getLayout()))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps) (AppContainer);

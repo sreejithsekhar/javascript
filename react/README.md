@@ -4,7 +4,10 @@ react -- done
 redux -- done
 sass -- done
 build an app drawer -- done
-react grid layout --
+react grid layout -- done
+app open -- done
+app close -- done
+app pos save
 test
 grunt
 lint
