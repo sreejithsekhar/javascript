@@ -10,6 +10,40 @@ export const closeDrawer = () => ({
     type: "CLOSE_DRAWER"
 });
 
+function customizationRequested() {
+    return {
+        type: "CUSTOMIZATION_REQUESTED"
+    }
+}
+
+function customizationReceived(response) {
+    return {
+        type: "CUSTOMIZATION_RECEIVED"
+    }
+}
+
+function customizationFailed(error) {
+    return {
+        type: "CUSTOMIZATION_FAILED"
+    }
+}
+
+export const applyCustomization = () =>
+    (dispatch, getState) => {
+        console.log("state", getState());        
+        dispatch(customizationRequested());
+        return fetch("/settings", {
+            method: "POST",
+            body: JSON.stringify({
+                "layout": ["x"]
+            }),
+            headers: {
+                'content-type': 'application/json'
+            }
+        }).then((repsonse) => dispatch(customizationReceived(response)))
+        .catch((err) => dispatch(customizationFailed(err)));
+    }
+
 export const appMenuClicked = (app) => ({
     type: "APP_MENU_CLICKED",
     selectedApp: app

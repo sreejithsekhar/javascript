@@ -6,7 +6,7 @@ import "./app-drawer.scss";
 import ContextMenu from "./context-menu";
 import AppMenuDrawer from "./app-menu-drawer";
 
-import { openDrawer, closeDrawer, appDrawerLoaded, appMenuClicked } from "../actions";
+import { openDrawer, applyCustomization, appDrawerLoaded, appMenuClicked } from "../actions";
 
 class AppDrawer extends React.PureComponent {
     render () {
@@ -26,7 +26,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     onShow: () => dispatch(openDrawer()),
-    onHide: () => dispatch(closeDrawer()),
+    onHide: (layout) => dispatch(applyCustomization(layout)),
     onAppClick: (app) => dispatch(appMenuClicked(app))
 });
 

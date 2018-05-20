@@ -11,6 +11,8 @@ const workspace = (state = {}, action) => {
                 showMenu: true
             }
         case "CLOSE_DRAWER":
+        case "CUSTOMIZATION_RECEIVED":
+        case "CUSTOMIZATION_FAILED":
             return {
                 ...state,
                 showMenu: false

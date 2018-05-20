@@ -7,8 +7,8 @@ build an app drawer -- done
 react grid layout -- done
 app open -- done
 app close -- done
-redux thunk
-app pos save
+redux thunk --done
+app pos save --
 test
 grunt
 lint
