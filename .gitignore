@@ -60,3 +60,5 @@ typings/
 # next.js build output
 .next
 react/dist/data/workspace.json
+react/dist/bundle.js
+react/dist/index.html

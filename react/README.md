@@ -10,12 +10,12 @@ app close -- done
 redux thunk --done
 app pos save -- done
 test redux -- done
-test react
-grunt
-lint
+test react -- done
+grunt -- done
+lint --
 express
 mock vs real services
-integrate angularjs
 load in ie
+integrate angularjs
 react router
 chat view
