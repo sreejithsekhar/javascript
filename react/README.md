@@ -12,7 +12,7 @@ app pos save -- done
 test redux -- done
 test react -- done
 grunt -- done
-lint --
+lint -- done
 express
 mock vs real services
 load in ie

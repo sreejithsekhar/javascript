@@ -5,12 +5,18 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         webpack: {
             options: {
-              stats: !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
+                stats: !process.env.NODE_ENV || process.env.NODE_ENV === 'development'
             },
             prod: webpackConfig,
-            dev: Object.assign({ watch: true }, webpackConfig)
-          }
+            dev: Object.assign({
+                watch: true
+            }, webpackConfig)
+        },
+        eslint: {
+            target: ['src/**/*.js']
+        }
     });
 
     grunt.loadNpmTasks("grunt-webpack");
+    grunt.loadNpmTasks("grunt-eslint");
 }

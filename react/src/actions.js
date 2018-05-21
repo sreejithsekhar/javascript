@@ -9,19 +9,19 @@ export const openDrawer = () => ({
 function customizationRequested() {
     return {
         type: "CUSTOMIZATION_REQUESTED"
-    }
+    };
 }
 
 function customizationReceived(response) {
     return {
         type: "CUSTOMIZATION_RECEIVED"
-    }
+    };
 }
 
 function customizationFailed(error) {
     return {
         type: "CUSTOMIZATION_FAILED"
-    }
+    };
 }
 
 export const applyCustomization = () =>
@@ -35,7 +35,7 @@ export const applyCustomization = () =>
             }
         }).then((repsonse) => dispatch(customizationReceived(response)))
         .catch((err) => dispatch(customizationFailed(err)));
-    }
+    };
 
 export const appMenuClicked = (app) => ({
     type: "APP_MENU_CLICKED",
@@ -45,7 +45,7 @@ export const appMenuClicked = (app) => ({
 function settingsRequested() {
     return {
         type: "WORKSPACE_SETTINGS_REQUESTED"
-    }
+    };
 }
 
 function settingsReceived(response) {
@@ -54,13 +54,13 @@ function settingsReceived(response) {
         apps: response.apps,
         layout: response.layouts,
         openedApps: response.openedApps
-    }
+    };
 }
 
 function settingsFailed(error) {
     return {
         type: "WORKSPACE_SETTINGS_FAILED"
-    }
+    };
 }
 
 export function loadWorkspaceSettings() {
@@ -70,12 +70,12 @@ export function loadWorkspaceSettings() {
             .then(response => response.json())
             .then(json => dispatch(settingsReceived(json)))
             .catch(err => dispatch(settingsFailed(err)));
-    }
+    };
 }
 
 export function onWorkspaceLayoutChanged(layout) {
     return {
         type: "WORKSPACE_LAYOUT_CHANGED",
         layout: layout
-    }
+    };
 }

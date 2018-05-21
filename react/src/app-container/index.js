@@ -34,6 +34,6 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     onWorkspaceLayoutChanged: (layout) => dispatch(onWorkspaceLayoutChanged(layout))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps) (AppContainer);

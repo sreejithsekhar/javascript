@@ -9,19 +9,19 @@ const workspace = (state = {}, action) => {
             return {
                 ...state,
                 showMenu: true
-            }
+            };
         case "CLOSE_DRAWER":
         case "CUSTOMIZATION_RECEIVED":
         case "CUSTOMIZATION_FAILED":
             return {
                 ...state,
                 showMenu: false
-            }
+            };
         case "APP_DRAWER_LOADED":
             return {
                 ...state,
                 apps: action.apps
-            }
+            };
         case "APP_MENU_CLICKED":
             const {
                 selectedApp
@@ -34,29 +34,29 @@ const workspace = (state = {}, action) => {
                 ...state,
                 selectedApp: action.selectedApp,
                 openedApps: apps
-            }
+            };
         case "READ_APP_LAYOUT":
             return {
                 ...state,
                 layout: action.layout,
                 openedApps: action.openedApps
-            }
+            };
         case "WORKSPACE_SETTINGS_RECEIVED":
         return {
             ...state,
             apps: action.apps,
             layout: action.layout,
             openedApps: action.openedApps
-        }
+        };
         case "WORKSPACE_LAYOUT_CHANGED":
         return {
             ...state,
             layout: action.layout
-        }
+        };
         default:
-            return state
+            return state;
     }
-}
+};
 
 export default combineReducers({
     workspace

@@ -16,7 +16,7 @@ class Workspace extends React.PureComponent {
                 <AppDrawer key = "appdrawer" / > , 
                 <AppContainer key = "appcontainer" / >
             ]
-        )
+        );
     }
 };
 

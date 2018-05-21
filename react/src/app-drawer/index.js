@@ -15,7 +15,7 @@ class AppDrawer extends React.PureComponent {
                 <ContextMenu key="contextmenu" menu={this.props}/>,
                 <AppMenuDrawer key="appdrawer" menu={this.props}/>
             ]
-        )
+        );
     }
 }
 
