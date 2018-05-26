@@ -63,13 +63,19 @@ function settingsFailed(error) {
     };
 }
 
+// export function loadWorkspaceSettings() {
+//     return dispatch => {
+//         dispatch(settingsRequested());
+//         return fetch("/data/workspace.json")
+//             .then(response => response.json())
+//             .then(json => dispatch(settingsReceived(json)))
+//             .catch(err => dispatch(settingsFailed(err)));
+//     };
+// }
+
 export function loadWorkspaceSettings() {
-    return dispatch => {
-        dispatch(settingsRequested());
-        return fetch("/data/workspace.json")
-            .then(response => response.json())
-            .then(json => dispatch(settingsReceived(json)))
-            .catch(err => dispatch(settingsFailed(err)));
+    return {
+        type: "LOAD_WORKSPACE_SETTINGS"
     };
 }
 
