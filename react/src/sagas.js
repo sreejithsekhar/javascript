@@ -1,13 +1,13 @@
 import { call, put, takeEvery } from "redux-saga/effects";
 
-function loadWorkspaceSettings() {
+export function loadWorkspaceSettings() {
     return fetch("/data/workspace.json")
         .then(response => response.json())
         .then(json => ({ data: json}))
         .catch(err => ({err}));
 };
 
-function* fecthSettings() {
+export function* fecthSettings() {
     const { data, err } = yield call(loadWorkspaceSettings);
     if (data) {
         yield put({

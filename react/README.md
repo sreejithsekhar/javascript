@@ -13,9 +13,7 @@ test redux -- done
 test react -- done
 grunt -- done
 lint -- done
-express
-mock vs real services
-load in ie
-integrate angularjs
-react router
-chat view
+express --done
+karma test runner -- done
+redux saga --
+reselct
