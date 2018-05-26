@@ -11,7 +11,9 @@ function setup(showMenu) {
         menu: {
             showMenu: showMenu,
             apps: ["app1", "app2", "app3"],
-            onAppClick: jest.fn()
+            onAppClick: function (params) {
+                return true;
+            }
         }       
     }
 
