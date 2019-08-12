@@ -62,3 +62,4 @@ typings/
 react/dist/data/workspace.json
 react/dist/bundle.js
 react/dist/index.html
+hello-router/*
