@@ -1,3 +1,6 @@
+// https://www.hackerrank.com/challenges/reduced-string/problem
+// baab => "Empty String"
+// aacbb => "c"
 const reduceFunction = s => {
   let i = 1;
   while (i < s.length) {
@@ -13,4 +16,3 @@ const x = "kagoyzkgfjnyvjewazalxngpdcfahneqoqgiyjgpzobhaghmgzmnwcmeykqzgajlmuerh
 const y ="kagoyzkgfjnyvjewazalxngpdcfahneqoqgiyjgpzobhaghmgzmnwcmeykqzgajlmuersanpdtmrzibswswzbjqytgfewi";
 console.log(reduceFunction(x) === y);
 
-console.log(reduceFunction("bb"));
