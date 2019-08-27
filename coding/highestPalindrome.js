@@ -26,8 +26,13 @@ function highestValuePalindrome(s, n, k) {
 
 }
 highestValuePalindrome("3843", 4, 1);
-// first make it palindrome with highest digit present keep the array offset somewhere decrement k by one
-// if k is greater than 1 then start making digits on either side 9 check the offset array whether it is already touched if touched then make both nine but decrement k only once if not touched the decrement k by 2
+// first make it palindrome with highest digit present 
+//  keep the array offset somewhere 
+//  decrement k by one
+// if k is greater than 1 then start making digits on either side 9 
+//  check the offset array whether it is already touched 
+//  if touched then make both nine but decrement k only once 
+//  if not touched the decrement k by 2
 // if k is greater than one then change mid point to 9
 
 //highestValuePalindrome("38543", 5, 1);
